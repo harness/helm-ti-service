@@ -62,12 +62,12 @@ spec:
           - name: MONGODB_USERNAME
             valueFrom:
               secretKeyRef:
-                name: harness-secret
+                name: harness-secrets
                 key: mongodbUsername
           - name: MONGODB_PASSWORD
             valueFrom:
               secretKeyRef:
-                name: harness-secret
+                name: harness-secrets
                 key: mongodbPassword
           - name: TI_SERVICE_MONGODB_CONN_STR
             value: 'mongodb://$(MONGODB_USERNAME):$(MONGODB_PASSWORD)@mongodb-replicaset-chart-0.mongodb-replicaset-chart.{{ .Release.Namespace }}.svc:27017/ti-harness?authSource=admin'
@@ -76,8 +76,8 @@ spec:
           - name: TI_SERVICE_TIMESCALE_PASSWORD
             valueFrom:
               secretKeyRef:
-                name: harness-secret
-                key: "timescaledbPostgressPassword"
+                name: harness-secrets
+                key: "timescaledbPostgresPassword"
           - name: TSDB_URL
             value: 'postgres://postgres:$(TI_SERVICE_TIMESCALE_PASSWORD)@timescaledb-single-chart.{{ .Release.Namespace }}:5432/harnessti'
           envFrom:
