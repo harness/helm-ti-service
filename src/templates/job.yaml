@@ -5,14 +5,12 @@ metadata:
   namespace: {{ .Release.Namespace }}
   annotations:
     {{- include "ti-service.labels" . | nindent 4 }}
-    # "helm.sh/hook": post-install,post-upgrade
-    # "helm.sh/hook-delete-policy": hook-succeeded,before-hook-creation
+    "helm.sh/hook": post-install,post-upgrade
+    "helm.sh/hook-delete-policy": hook-succeeded,before-hook-creation
 spec:
-  #ttlSecondsAfterFinished: 100
   template:
     metadata:
       annotations:
-        "sidecar.istio.io/inject": "false"
       {{- with .Values.podAnnotations }}
         {{- toYaml . | nindent 8 }}
       {{- end }}

@@ -3,16 +3,16 @@ entries:
   ti-service:
   - apiVersion: v2
     appVersion: 0.0.1
-    created: "2022-08-10T16:16:10.462775-04:00"
+    created: "2022-08-14T18:45:47.043448+05:30"
     dependencies:
     - name: harness-common
       repository: https://harness.github.io/helm-common/charts
       version: 0.1.1
     description: A Helm chart for Kubernetes
-    digest: 4bce73ff4be03d4eef2903f9e877adc9fb9a94e35b0c298dd594d47c2460474e
+    digest: c0320d84891f89b26def4008ec070c7e7d5229b8e4afa5920b912a28e43aa65b
     name: ti-service
     type: application
     urls:
     - ti-service-0.1.0.tgz
     version: 0.1.0
-generated: "2022-08-10T16:16:10.461253-04:00"
+generated: "2022-08-14T18:45:47.041843+05:30"
