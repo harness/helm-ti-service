@@ -11,12 +11,12 @@ image:
   repository: harness/ti-service-signed
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "release-77"
 
 jobs:
   migrate:
     image:
-      tag: 
+      tag: release-77
       repository: harness/ti-service-signed
       pullPolicy: IfNotPresent
 
