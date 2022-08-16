@@ -1,12 +1,11 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: ti-migration-release-77
+  name: a-ti-migration-release-77
   namespace: {{ .Release.Namespace }}
   annotations:
+  labels:
     {{- include "ti-service.labels" . | nindent 4 }}
-    "helm.sh/hook": post-install,post-upgrade
-    "helm.sh/hook-delete-policy": hook-succeeded,before-hook-creation
 spec:
   template:
     metadata:
