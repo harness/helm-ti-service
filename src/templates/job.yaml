@@ -20,7 +20,7 @@ spec:
       - name: migrate
         image: {{ .Values.jobs.migrate.image.repository}}:{{ .Values.jobs.migrate.image.tag}}
         imagePullPolicy: {{ .Values.jobs.migrate.image.pullPolicy}}
-        command: ["/bin/bash", "-c", "/opt/harness/migrate.sh" ]
+        command: ["/bin/bash", "-c", "sleep 300 && /opt/harness/migrate.sh" ]
         resources:
           {{- toYaml .Values.jobresources | nindent 10 }}
         env:
