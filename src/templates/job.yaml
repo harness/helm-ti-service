@@ -54,8 +54,7 @@ spec:
       affinity:
         {{ toYaml . | indent 8 }}
       {{- end }}
-      {{- with .Values.tolerations }}
-      tolerations:
-        {{ toYaml . | indent 8 }}
+      {{- if .Values.tolerations }}
+      tolerations: {{- include "common.tplvalues.render" (dict "value" .Values.tolerations "context" $) | nindent 8 }}
       {{- end }}
 
