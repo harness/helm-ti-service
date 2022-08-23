@@ -24,6 +24,19 @@ jobs:
       pullPolicy: IfNotPresent
       digest: ""
 
+mongoSecrets:
+  userName:
+    name: harness-secrets
+    key: mongodbUsername
+  password:
+    name: harness-secrets
+    key: mongodbPassword
+
+tiServiceTimescaleSecret:
+  password:
+    name: harness-secrets
+    key: timescaledbPostgresPassword
+
 nameOverride: ""
 fullnameOverride: ""
 
