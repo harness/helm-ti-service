@@ -15,6 +15,14 @@ image:
   tag: "release-77"
   digest: ""
 
+waitForInitContainer:
+  image:
+    registry: docker.io
+    repository: harness/helm-init-container
+    pullPolicy: IfNotPresent
+    tag: "latest"
+    digest: ""
+
 jobs:
   migrate:
     image:
