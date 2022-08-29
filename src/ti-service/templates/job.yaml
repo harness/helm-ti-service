@@ -32,8 +32,8 @@ spec:
           - name: MONGODB_PASSWORD
             valueFrom:
               secretKeyRef:
-                name: harness-secrets
-                key: mongodbPassword
+                name: mongodb-replicaset-chart
+                key: mongodb-root-password
           - name: TI_SERVICE_MONGODB_CONN_STR
             value: {{ include "harnesscommon.database.mongo" (dict "database" "ti-harness" "context" $) }}
           - name: TI_SERVICE_TIMESCALE_USERNAME
