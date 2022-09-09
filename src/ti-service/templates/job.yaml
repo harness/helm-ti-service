@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: a-ti-migration-release-77
+  name: ti-migration-{{ randAlphaNum 6 }}
   namespace: {{ .Release.Namespace }}
   annotations:
   labels:
