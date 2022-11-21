@@ -92,7 +92,7 @@ spec:
                 name: {{ .Values.tiServiceTimescaleSecret.password.name }}
                 key: {{ .Values.tiServiceTimescaleSecret.password.key }}
           - name: TSDB_URL
-            value: 'postgres://postgres:$(TI_SERVICE_TIMESCALE_PASSWORD)@timescaledb-single-chart.{{ .Release.Namespace }}:5432/harnessti'
+            value: 'postgres://postgres:$(TI_SERVICE_TIMESCALE_PASSWORD)@timescaledb-single-chart.{{ .Release.Namespace }}:5432/harnessti?sslmode=disable '
           envFrom:
           - configMapRef:
               name: ti-service
